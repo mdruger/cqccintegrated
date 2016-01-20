@@ -1,0 +1,6 @@
+## Overview ##
+The ClearQuest/ClearCase Integration allows users to associate changes made in ClearCase to Defect/Enhancement/Issues(DEI) in ClearQuest. The integration is driven by ClearCase(CC) triggers that fire based on certain CC actions.
+## Details ##
+The triggers retrieve and send data to ClearQuest(CQ) via the CQ XML interface (http://code.google.com/p/cqxmlintf/).  The triggesr generate XML to send to the CQ XML interface and parses the XML returned from the XML interface.  The Integration stores ClearCase(CC) data about the file version in the source\_versions field in CQ. CC creates an attribute called DEI that contains the ID(s) of the DEI(s) associated to the file version. The CC checkin comments are added to the associated DEI(s) in CQ in the form of a note of type 'Comments'.
+## Justification ##
+The ClearQuest/ClearCase integration that is supplied by IBM is not customizable and does not work with a mixed environment of Base and UCM enabled ClearCase.  So we developed our own integration that works independent of the ClearCase environment and allows us to customize according to our schema.
